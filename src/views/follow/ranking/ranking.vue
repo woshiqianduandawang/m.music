@@ -13,7 +13,7 @@
         <tr>
           <th></th>
           <th><i>歌曲</i></th>
-          <th><i>时长</i></th>
+          <th  id="time"><i>时长</i></th>
           <th><i>歌手</i></th>
         </tr>
         <tr v-for="(item, index) in list.tracks" :key="index" id="tr">
@@ -26,7 +26,7 @@
             <p :title=item.name  @click="$store.commit('PlayMusic',{songs: list.tracks, index: index})">{{OmitName(item.name, 16)}}</p>
           </td>
           <!-- 歌曲时长 -->
-          <td>
+          <td id="time">
             <i>
               {{GetTime(item.dt / 1000 / 60)}}:
               {{GetTime(item.dt / 1000 % 60)}}
@@ -128,6 +128,7 @@ export default {
   #ranking{
     position: relative;
     top: 40px;
+    font-size: 0;
   }
   /* 版心 */
   #content{
@@ -175,6 +176,12 @@ export default {
     border-top: 0;
     border-collapse: collapse;
   }
+  tr,
+  th{
+    height: 100px;
+    line-height: 100px;
+    font-size: 16px;
+  }
   tr:nth-child(2n){
     background-color: rgb(245, 244, 244);
   }
@@ -183,12 +190,15 @@ export default {
   }
   tr td:nth-child(4){
     padding-left: 20px;
-    width: 427px
+    width: 410px
+  }
+  th:nth-child(4){
+    width: 430px
   }
   th{
     box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);
-    height: 42px;
-    line-height: 42px;
+    /* height: 42px;
+    line-height: 42px; */
   }
   table i {
     float: left;
@@ -197,7 +207,7 @@ export default {
   th,
   td{
     display: inline-block;
-    width: 447px;
+    width: 400px;
     white-space: nowrap;
     overflow: hidden;
   }
@@ -210,7 +220,6 @@ export default {
     border-left: 0;
     padding-left: 100px;
     width: 50px;
-    height: 42px;
   }
   td:nth-child(1){
     padding-left: 50px;
@@ -218,7 +227,7 @@ export default {
   }
   th:nth-child(3),
   td:nth-child(3){
-    width: 80px;
+    width: 141px;
   }
   table p{
     padding-left: 20px;

@@ -44,30 +44,32 @@ export default {
 <style scoped>
   #follow{
     position: relative;
-    width: 100%;
-    height: 40px;
+    width: 1280px;
+    height: 80px;
     background-color: rgb(194, 12, 12);
   }
   #FollowBigBox{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     padding-left: 73px;
     width: 1280px;
-    height: 100%;
+    height: 80px;
+    font-size: 0;
   }
   #FollowBox{
     display: inline-block;
-    width: 130px;
-    height: 40px;
+    position: relative;
+    top: 0;
+    width: 200px;
+    height: 80px;
     text-align: center;
-    line-height: 40px;
+    line-height: 80px;
+    font-size: 0;
   }
   a{
     padding: 3px;
     padding-left: 30px;
     padding-right: 30px;
-    border-radius: 20px;
+    border-radius: 60px;
     text-decoration: none;
     text-align: center;
     font-size: 16px;

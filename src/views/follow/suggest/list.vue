@@ -4,7 +4,7 @@
     <div id="content">
       <div id="a1">
         <h3>榜单</h3>
-        <router-link to="/follow/ranking">更多</router-link>
+        <router-link tag="i" to="/follow/ranking">更多</router-link>
       </div>
       <div id="a2">
         <!-- 飙升榜 -->
@@ -14,7 +14,7 @@
             <h4>飙升榜</h4>
           </div>
           <li
-            v-show="index < 10"
+            v-show="index < 6"
             v-for="(item, index) in soar.tracks"
             :key="index"
           >
@@ -47,7 +47,7 @@
             <h4>新歌榜</h4>
           </div>
           <li
-            v-show="index < 10"
+            v-show="index < 6"
             v-for="(item, index) in NewSong.tracks"
             :key="index"
           >
@@ -83,7 +83,7 @@
             <h4>原创榜</h4>
           </div>
           <li
-            v-show="index < 10"
+            v-show="index < 6"
             v-for="(item, index) in original.tracks"
             :key="index"
           >
@@ -115,7 +115,7 @@
 </template>
 
 <script>
-import mixincomputed from '@/common/mixin-computed'
+import mixincomputed from "@/common/mixin-computed";
 
 export default {
   name: "List",
@@ -124,7 +124,7 @@ export default {
       soar: "",
       NewSong: "",
       original: "",
-    }
+    };
   },
   mixins: [mixincomputed],
   created() {
@@ -189,14 +189,14 @@ export default {
 h3 {
   display: inline-block;
 }
-a {
+/* a {
   float: right;
   padding: 6px;
   text-align: center;
   font-size: 14px;
   line-height: 14px;
   cursor: pointer;
-}
+} */
 a:hover {
   text-decoration: underline;
 }
@@ -215,6 +215,7 @@ ol {
   white-space: nowrap;
   width: 336px;
   background-color: rgb(241, 241, 241);
+  font-size: 0;
 }
 ol:nth-child(3) {
   border-right: 2px solid rgba(146, 146, 146, 0.5);
@@ -232,9 +233,11 @@ ol h4 {
 }
 li {
   padding: 5px;
+  height: 80px;
+  line-height: 80px;
 }
 li:nth-child(2n),
-#BottomLi {
+#BottomLi{
   background-color: rgb(224, 223, 223);
 }
 ol span {
@@ -254,9 +257,17 @@ ol p:hover {
   cursor: pointer;
 }
 ol li a {
-  display: block;
-  margin-right: -245px;
-  float: none;
-  padding: 6px;
+  float: right;
+  font-size: 14px;
+}
+i {
+  position: relative;
+  top: 20px;
+  float: right;
+  font-size: 16px;
+}
+ol img {
+  width: 100px;
+  height: 100px;
 }
 </style>

@@ -25,7 +25,7 @@
       <div id="father">
         <ul id="picture" ref="ul">
           <!-- 第一张图前面放最后一张实现无缝衔接 -->
-          <li v-if="connect">
+          <li v-if="connect" ref="li">
             <a :href="banners[banners.length - 1].url">
               <img id="img" :src="banners[banners.length - 1].pic" alt="" />
             </a>
@@ -121,7 +121,7 @@ export default {
           }
         }
         // 调用动画函数
-        Animation(this.$refs.ul, 1080 * -this.count, () => {
+        Animation(this.$refs.ul, this.$refs.li.clientWidth * -this.count, () => {
           // 第一个参数:要动的盒子
           // 第二个参数:移动的距离
           // 第三个:动画完成后的回调函数
@@ -147,7 +147,7 @@ export default {
         } else {
           this.count--;
         }
-        Animation(this.$refs.ul, 1080 * -this.count, () => {
+        Animation(this.$refs.ul, this.$refs.li.clientWidth * -this.count, () => {
           this.flag = true;
         });
       }
@@ -164,16 +164,17 @@ export default {
   height: 420px;
 }
 #BannerCenter {
-  position: absolute;
+  position: relative;
   width: 1280px;
-  left: 50%;
-  transform: translateX(-50%);
+  height: 420px;
 }
 /* 装按钮的盒子和装轮播图的大盒子 */
 #btnbox,
 #father {
   display: flex;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   border-left: 2px solid rgba(38, 38, 38, 0.4);
   border-right: 2px solid rgba(38, 38, 38, 0.4);
   width: 1080px;

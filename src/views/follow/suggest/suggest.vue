@@ -43,7 +43,9 @@
             }
           }">电子<span>I</span></router-link>
 
-          <router-link tag="i" to="/follow/songsheet">更多</router-link>
+          <router-link tag="i" to="/follow/songsheet">
+            更多
+          </router-link>
         </div>
         <!-- 推荐歌单 -->
         <div id="a1-b1-c2">
@@ -64,7 +66,9 @@
         <!-- 新碟部分 -->
         <div id="a1-b1-c3">
           <h3>新碟上架</h3>
-          <i>更多</i>
+          <router-link tag="i" to="path">
+            更多
+          </router-link>
         </div>
         <div id="a1-b1-c4">
           <!-- 左右滑动按钮 -->
@@ -113,7 +117,7 @@ export default {
       this.$Request({
         url: '/top/playlist',
         params: {
-          limit: 10
+          limit: 9
         }
       }).then( ({data:{playlists:a}}) => {
         this.tags = a
@@ -198,7 +202,7 @@ export default {
 <style scoped>
   #suggest{
     position: relative;
-    top: 40px;
+    /* top: 40px; */
   }
   #a1{
     position: absolute;
@@ -210,6 +214,9 @@ export default {
   #a1-b1{
     /* border-left: 1px solid #000;
     border-right: 1px solid #000; */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     border: 2px solid rgba(79, 79, 79, 0.1);
     padding: 20px;
     box-sizing: border-box;
@@ -220,6 +227,8 @@ export default {
     border-bottom: 2.3px solid rgb(211, 1, 1);
     padding-bottom: 10px;
     width: 100%;
+    height: 150px;
+    line-height: 150px;
   }
   h3{
     display: inline-block;
@@ -238,6 +247,8 @@ export default {
     text-decoration: underline;
   }
   i{
+    position: relative;
+    top: 73px;
     float: right;
   }
   #a1-b1-c1 a span{
@@ -251,28 +262,29 @@ export default {
   }
   /* 放遍历数据的大盒子，包括歌单和新碟 */
   #a1-b1-c2-d1{
+    position: relative;
     display: inline-block;
-    margin: 38px;
+    margin: 42px;
     margin-top: 30px;
-    margin-bottom: 50px;
-    width: 130px;
-    height: 130px;
+    margin-bottom: 150px;
+    width: 260px;
+    height: 260px;
     cursor: pointer;
   }
   /* 推荐歌单和新碟的头像 */
   #a1-b1-c2-d1 img,
   #a1-b1-c4-d1 img{
     border-radius: 10px;
-    width: 130px;
-    height:130px;
+    width: 260px;
+    height:260px;
   }
   /* 推荐歌单标题 */
   #a1-b1-c2-d1 span{
     display: block;
-    position: relative;
-    top: -12px;
-    width: 130px;
-    height: 66px;
+    position: absolute;
+    top: 275px;
+    width: 260px;
+    font-size: 16px;
     overflow: hidden;
   }
   /* 标题鼠标悬停 */
@@ -282,8 +294,8 @@ export default {
   /* 头像里下边的播放数小条 */
   #a1-b1-c2-d1 div{
     position: relative;
-    height: 20px;
-    top: -24px;
+    height: 50px;
+    top: -67px;
     border-top: 1px solid rgb(0, 0, 0, 0.5);
     box-sizing: border-box;
     box-shadow: 0px 1px 5px rgb(0, 0, 0, 0.6);
@@ -295,42 +307,48 @@ export default {
   #a1-b1-c2-d1 div img{
     position: absolute;
     opacity: 0.5;
-    width: 15px;
-    height: 15px;
+    width: 40px;
+    height: 40px;
   }
   #a1-b1-c2-d1 div img:nth-child(1){
     left: 3px;
     top: 3px;
   }
   #a1-b1-c2-d1 div img:nth-child(3){
-    left: 96px;
+    right: 20px;
     top: 3px;
   }
   #a1-b1-c2-d1 div p{
     position: absolute;
-    left: 25px;
+    right: 60px;
+    font-size: 16px;
+    line-height: 50px;
   }
 
   /* 新碟 */
   #a1-b1-c4{
     position: relative;
     width: 1039px;
-    height: 217px;
+    height: 457px;
     white-space:nowrap;
     overflow: hidden;
   }
   #a1-b1-c4 #img{
-    position: fixed;
-    top: 670px;
-    width: 26px;
-    height: 30px;
+    position: absolute;
+    top: 130px;
+    width: 52px;
+    height: 60px;
     font-size: 30px;
     font-weight: 700;
     opacity: 0.5;
     cursor: pointer;
   }
+  #a1-b1-c4 #img:nth-child(2) {
+    left: -17px;
+    right: 0px;
+  }
   #a1-b1-c4 #img:nth-child(1) {
-    right: 223px;
+    right: -17px;
   }
   #a1-b1-c4 div {
     display: inline-block;
@@ -338,7 +356,7 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     width: 965px;
-    height: 100%;
+    height: 434px;
     overflow: hidden;
   }
   #a1-b1-c4 div ol{
@@ -350,23 +368,27 @@ export default {
     position: relative;
     display: inline-block;
     padding: 20px 32px 0 32px;
-    width: 194px;
-    height: 188px;
+    width: 388px;
+    height: 376px;
     box-sizing: border-box;
     cursor: pointer;
   }
   #a1-b1-c4 ol li img:nth-child(1){
     position:relative;
+    width: 260px;
+    height: 260px;
     z-index: 3;
     box-shadow: 3px 3px 4px rgb(0, 0, 0, 0.5);
   }
   #a1-b1-c4 ol li img:nth-child(2){
     position:relative;
-    left: -102px;
+    left: -220px;
+    width: 260px;
+    height: 260px;
     z-index: 2;
   }
   #a1-b1-c4 ol li p:nth-last-child(2) {
-    width: 156px;
+    width: 320px;
     overflow: hidden;
   }
   #a1-b1-c4 ol li i{

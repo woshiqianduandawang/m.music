@@ -7,6 +7,7 @@
 
 body {
   background-color: rgb(244, 244, 244);
+  font-size: 16px;
 }
 
 li {
@@ -20,4 +21,16 @@ a {
 
 i {
   font-style: normal;
+}
+h3{
+  font-size: 19px;
+}
+h4{
+  font-size: 16px;
+}
+span{
+  font-size: 16px;
+}
+p{
+  font-size: 16px;
 }

@@ -5,7 +5,7 @@
     <div id="inputhbox">
       <input
         type="text"
-        placeholder="歌手/歌曲/歌单"
+        placeholder="歌手/歌曲"
         @input="input"
         @focus="focus"
         @blur="blur"
@@ -215,12 +215,12 @@ export default {
 #searchbox {
   position: absolute;
   right: 200px;
-  top: 17px;
+  top: 34px;
   border: 0;
-  border-radius: 15px;
+  border-radius: 30px;
   outline: none;
-  width: 150px;
-  height: 30px;
+  width: 250px;
+  height: 60px;
   background-color: #fff;
 }
 /* 装input的盒子 */
@@ -231,11 +231,11 @@ export default {
 #inputhbox input {
   position: absolute;
   top: 0px;
-  left: 14px;
+  left: 26px;
   border: 0;
   outline: none;
-  width: 120px;
-  height: 30px;
+  width: 180px;
+  height: 60px;
   font-size: 16px;
   z-index: 5;
 }
@@ -297,8 +297,8 @@ input::-webkit-input-placeholder {
   position: absolute;
   top: 3px;
   right: 10px;
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   z-index: 5;
 }

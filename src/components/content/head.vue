@@ -58,25 +58,23 @@ export default {
   position: relative;
   margin: 0;
   width: 100%;
-  height: 65px;
+  height: 130px;
   background-color: rgb(61, 61, 61);
   font-size: 0;
   z-index: 9;
 }
 #tabbar #tabbox {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   width: 1280px;
-  height: 100%;
+  height: 130px;
 }
 a {
   display: inline-block;
   color: rgb(204, 204, 204);
   width: 200px;
-  height: 100%;
+  height: 130px;
   text-align: center;
-  line-height: 65px;
+  line-height: 130px;
   font-size: 18px;
   text-decoration: none;
   overflow: hidden;
@@ -97,7 +95,7 @@ p {
 sub {
   display: block;
   position: relative;
-  top: -3px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%) rotateZ(45deg);
   width: 20px;

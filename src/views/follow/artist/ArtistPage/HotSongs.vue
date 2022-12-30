@@ -79,13 +79,14 @@ export default {
 <style scoped>
 #a1 {
   position: relative;
-  width: 640px;
+  width: 960px;
   left: 50%;
   transform: translateX(-50%);
   border: 2px solid rgba(79, 79, 79, 0.1);
   border-top: 0;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
+  font-size: 16px;
 }
 #a1-b1 {
   position: relative;
@@ -94,7 +95,6 @@ export default {
 table {
   display: block;
   position: relative;
-  /* border: 1px solid rgb(0, 0, 0, 0.1); */
   border-top: 0;
   border-collapse: collapse;
 }
@@ -123,7 +123,7 @@ table i {
 td {
   display: inline-block;
   white-space: nowrap;
-  padding-left: 20px;
+  padding-left: 50px;
   overflow: hidden;
 }
 td:nth-child(1) {
@@ -133,16 +133,16 @@ td:nth-child(1) {
   width: 50px;
 }
 td:nth-child(3) {
-  padding-left: 22px;
-  width: 80px;
+  padding-left: 42px;
+  width: 200px;
   text-align: center;
   box-sizing: border-box;
 }
 td:nth-child(2) {
-  width: 236px;
+  width: 300px;
 }
 td:nth-child(4) {
-  width: 230px;
+  width: 305px;
 }
 td:nth-child(5) {
   width: 187px;

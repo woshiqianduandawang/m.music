@@ -185,6 +185,7 @@ export default {
 <style scoped>
 a span {
   color: rgb(12 115 194);
+  font-size: 16px;
 }
 div #company,
 div #date {

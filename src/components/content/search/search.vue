@@ -222,6 +222,7 @@ export default {
   width: 250px;
   height: 60px;
   background-color: #fff;
+  /* font-size: 0; */
 }
 /* 装input的盒子 */
 #inputhbox {
@@ -251,7 +252,7 @@ input::-webkit-input-placeholder {
 #SearchRecord {
   position: absolute;
   top: 43px;
-  left: -50px;
+  left: -200px;
   padding: 10px;
   border-radius: 10px;
   box-sizing: border-box;
@@ -259,8 +260,8 @@ input::-webkit-input-placeholder {
   box-shadow: 1px 1px 3px #aab2bd;
   overflow-x: hidden;
   overflow-y: scroll;
-  width: 200%;
-  height: 200px;
+  width: 600px;
+  height: 400px;
   z-index: 5;
   font-size: 13px;
   background-color: #fff;
@@ -270,13 +271,12 @@ input::-webkit-input-placeholder {
   display: none;
 }
 #SearchRecord li {
-  height: 20px;
+  height: 50px;
   z-index: 666;
   list-style: none;
   cursor: pointer;
 }
 #SearchRecord li p {
-  float: left;
   width: 266px;
   overflow: hidden;
   white-space: nowrap;
@@ -286,11 +286,13 @@ input::-webkit-input-placeholder {
   color: #fff;
 }
 #SearchRecord li span {
-  float: right;
-  margin-right: -5px;
+  position: relative;
+  top: -85px;
+  right: -500px;
   font-size: 20px;
   line-height: 13px;
   cursor: pointer;
+  font-size: 16px;
 }
 /* 放大镜图标 */
 #searchimg {
@@ -310,16 +312,15 @@ input::-webkit-input-placeholder {
 #SearchSuggest {
   position: absolute;
   top: 43px;
-  left: -50px;
+  left: -200px;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px #aab2bd;
   overflow-x: hidden;
   overflow-y: scroll;
-  width: 300%;
-  height: 300px;
+  width: 600px;
+  height: 800px;
   z-index: 6;
-  font-size: 16px;
   background-color: #fff;
 }
 
@@ -329,16 +330,24 @@ input::-webkit-input-placeholder {
 #SearchSuggest ol:nth-last-child(1) {
   border: 0;
 }
-#SearchSuggest ol div #libox {
+#libox {
+  position: relative;
+  top: -60px;
+  right: -120px;
   margin-left: 20px;
   overflow: hidden;
-  width: 275px;
+  width: 450px;
+  font-size: 16px;
 }
-#SearchSuggest ol div #libox li {
+#libox li {
   margin: 5px;
   list-style: none;
 }
-#SearchSuggest ol div li p:hover {
+li p{
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+li p:hover {
   cursor: pointer;
   background-color: rgba(186, 186, 186, 0.3);
 }

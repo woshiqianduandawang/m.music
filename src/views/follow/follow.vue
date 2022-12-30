@@ -50,7 +50,6 @@ export default {
   }
   #FollowBigBox{
     position: relative;
-    padding-left: 73px;
     width: 1280px;
     height: 80px;
     font-size: 0;

@@ -208,6 +208,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    padding-bottom: 120px;
     width: 1280px;
     background-color: #fff;
   }

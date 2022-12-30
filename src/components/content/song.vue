@@ -168,6 +168,7 @@ export default {
 <style scoped>
   a span {
     color: rgb(12 115 194);
+    font-size: 13px;
   }
   a span:hover{
     text-decoration: underline;

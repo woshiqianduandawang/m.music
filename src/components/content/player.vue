@@ -1,13 +1,9 @@
 <template>
   <!-- 播放器图标 -->
-  <div id="player" @mouseover="focus" @mouseleave="mouseleave">
+  <div id="player" @mouseover="focus">
     <div id="content">
       <div id="song" @click="jump($store.state.song.id)">
-        <img
-          v-if="photo"
-          :src="song.al.picUrl + '?param=45y45'"
-          alt=""
-        />
+        <img v-if="photo" :src="song.al.picUrl + '?param=45y45'" alt="" />
         <!-- 歌曲名 -->
         <p>
           {{ $store.state.songs[$store.state.index].name
@@ -36,13 +32,16 @@
         <img @click="next" src="@/assets/img/player/Player-next.png" alt="" />
       </div>
       <!-- 播放列表按钮 -->
-      <img id="list"
-          @click="OpenorHideList"
-          src="@/assets/img/player/list.png"
-          alt=""
-        />
+      <img
+        id="list"
+        @click="OpenorHideList"
+        src="@/assets/img/player/list.png"
+        alt=""
+      />
       <!-- 播放列表的x -->
-      <span v-show="listif" @click="OpenorHideList">×</span>
+      <div id="close" v-show="listif">
+        <span @click="OpenorHideList">×</span>
+      </div>
       <!-- 播放列表 -->
       <ol v-show="listif">
         <li v-for="(item, index) in $store.state.songs" :key="index">
@@ -80,7 +79,6 @@ export default {
           this.next();
         }
       }, 1000),
-      timer: null,
       listif: false,
       song: null,
       photo: false,
@@ -128,16 +126,8 @@ export default {
     focus() {
       // 获得焦点显示播放器
       // console.log('获得');
-      clearInterval(this.timer);
       const player = document.querySelector("#player");
       player.style.bottom = 0 + "px";
-    },
-    mouseleave() {
-      // 失去焦点隐藏播放器
-      // console.log('失去');
-      this.timer = setInterval(function () {
-        player.style.bottom = -58 + "px";
-      }, 2000);
     },
     // 显示播放列表
     OpenorHideList() {
@@ -153,7 +143,6 @@ export default {
       })
         .then(({ data: { songs: a } }) => {
           this.song = a[0];
-          console.log(this.song);
           this.photo = true;
         })
         .catch((arr) => {
@@ -163,6 +152,12 @@ export default {
   },
   mounted() {
     this.GetSong();
+  },
+  created() {
+    window.addEventListener("scroll", () => {
+      const player = document.querySelector("#player");
+      player.style.bottom = 0 + "px";
+    });
   },
 };
 </script>
@@ -174,10 +169,12 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: 60px;
+  height: 120px;
   text-align: center;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
+  font-size: 0;
+  font-size: 16px;
 }
 #content {
   position: relative;
@@ -185,7 +182,7 @@ export default {
   transform: translateX(-50%);
   width: 800px;
 }
-#song{
+#song {
   position: absolute;
   top: 10px;
   left: 170px;
@@ -193,47 +190,51 @@ export default {
 }
 #song img {
   position: absolute;
+  width: 100px;
+  height: 100px;
   top: -3px;
   left: 1px;
 }
 #song p {
   position: relative;
   top: 10px;
-  left: 53px;
+  left: 140px;
+  width: 600px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
 }
 
 #imgbox {
   position: absolute;
-  top: 6px;
-  left: -50px;
+  top: 12px;
+  left: -180px;
 }
 #imgbox img {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
 }
 #list {
   position: absolute;
-  top: 16px;
-  right: 0px;
-  width: 30px;
-  height: 30px;
+  top: 32px;
+  right: -200px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
 ol {
   position: absolute;
-  top: -1040px;
+  top: -1000px;
   right: 0px;
-  width: 328px;
+  width: 600px;
   height: 1000px;
-  padding: 20px;
-  padding-left: 0;
-  padding-right: 0;
   overflow-y: scroll;
   overflow-x: hidden;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.8);
 }
+
 ol li:hover {
   background-color: rgb(19, 19, 19);
 }
@@ -242,13 +243,19 @@ p {
   margin: 5px;
   cursor: pointer;
 }
-span {
+#close {
   position: absolute;
-  top: -1040px;
-  right: 25px;
+  top: -1050px;
+  right: 0px;
+  width: 600px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#close span {
+  position: relative;
+  right: -250px;
   cursor: pointer;
   z-index: 4;
-  font-size: 25px;
   color: rgb(234, 234, 234);
 }
 span:hover {

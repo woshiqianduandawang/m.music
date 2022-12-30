@@ -135,9 +135,9 @@ export default {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    padding: 100px;
     padding-top: 35px;
     border: 2px solid rgba(79, 79, 79, 0.1);
+    padding-bottom: 120px;
     box-sizing: border-box;
     width: 1280px;
     background-color: #fff;
@@ -145,17 +145,17 @@ export default {
   /* 榜单分类 */
   #a1{
     position: absolute;
-    top: -3px;
-    left: -240px;
-    border-left: 1px solid rgb(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+    top: 0px;
+    left: -4px;
+    border: 1px solid rgb(0, 0, 0, 0.3);
     padding: 20px;
     width: 200px;
 
   }
   ol{
     display: block;
-    padding: 13px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
@@ -171,10 +171,12 @@ export default {
   table{
     display: block;
     position: relative;
-    top: 26px;
+    top: -39px;
+    left: 300px;
     border: 1px solid rgb(0, 0, 0, 0.1);
     border-top: 0;
     border-collapse: collapse;
+    width: 900px;
   }
   tr,
   th{
@@ -188,12 +190,12 @@ export default {
   #tr:hover{
     background-color: rgb(208, 208, 208);
   }
-  tr td:nth-child(4){
+  td:nth-child(4){
     padding-left: 20px;
-    width: 410px
+    width: 234px
   }
   th:nth-child(4){
-    width: 430px
+    width: 254px
   }
   th{
     box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);

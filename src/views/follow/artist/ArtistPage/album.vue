@@ -82,20 +82,22 @@ ol {
   border: 2px solid rgba(79, 79, 79, 0.1);
   padding: 10px;
   box-sizing: border-box;
-  width: 640px;
+  width: 960px;
 }
 #img {
   position: absolute;
   border-radius: 10px;
   box-shadow: 3px 3px 4px rgb(0 0 0 / 50%);
   z-index: 2;
+  width: 240px;
+  height: 240px;
 }
 ol li {
   position: relative;
   display: inline-block;
-  margin: 16px 0 0 16px;
-  width: 138px;
-  height: 188px;
+  margin: 30px 0 80px 30px;
+  width: 276px;
+  height: 276px;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -103,19 +105,20 @@ ol li #background {
   position: absolute;
   left: 16px;
   border-radius: 999px;
-  width: 120px;
-  height: 120px;
+  width: 240px;
+  height: 240px;
   box-shadow: 0px 5px 5px rgb(0 0 0 / 50%);
   z-index: 1;
 }
 li p {
   position: absolute;
-  bottom: 2px;
+  bottom: -110px;
   font-size: 13px;
   color: rgb(107, 102, 102);
+  line-height: 45px;
 }
 li p:nth-child(3) {
-  top: 126px;
+  top: 252px;
   font-size: 16px;
 }
 </style>

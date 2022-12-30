@@ -52,7 +52,7 @@ export default {
 }
 #a1-b1 {
   position: relative;
-  width: 640px;
+  width: 960px;
   left: 50%;
   transform: translateX(-50%);
   padding: 30px;
@@ -63,7 +63,7 @@ export default {
   background-color: #fff;
 }
 p {
-  line-height: 30px;
+  line-height: 60px;
   font-size: 16px;
 }
 </style>

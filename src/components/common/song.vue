@@ -70,12 +70,13 @@ export default {
   transform: translateX(-50%);
   width: 1280px;
   background-color: #fff;
+  font-size: 0;
 }
 #a1 {
   padding: 56px;
   padding-top: 30px;
   border: 2px solid rgba(79, 79, 79, 0.1);
-  width: 840px;
+  width: 900px;
 }
 #detail {
   position: relative;
@@ -88,7 +89,10 @@ export default {
 }
 h2 {
   font-size: 30px;
-  font-weight: 500;
+}
+#detail #DetailContent {
+  position: relative;
+  left: 180px;
 }
 #DetailContent a {
   display: block;
@@ -110,6 +114,8 @@ h2 {
 #imgbox img,
 #imgbox div {
   border-radius: 300px;
+  width: 130px;
+  height: 130px;
 }
 #imgbox img:nth-child(1) {
   position: absolute;
@@ -133,43 +139,55 @@ h2 {
   box-shadow: 0px 0px 10px rgb(0 0 0);
   z-index: 2;
 }
+
+/* 歌词 */
 #detail #intro {
   position: relative;
-  top: 40px;
+  top: 80px;
   left: 180px;
   width: 550px;
-  height: 350px;
-  line-height: 40px;
-  font-size: 14px;
+  height: 800px;
   overflow: hidden;
 }
+#intro p {
+  line-height: 80px;
+  font-size: 14px;
+}
+
+/* 按钮的盒子 */
 #action {
   position: relative;
   top: 13px;
 }
 #action button {
   position: relative;
+  left: 10px;
   padding-left: 5px;
   padding-right: 5px;
   border-color: rgb(184, 184, 184);
   margin-top: 5px;
+  margin-left: 10px;
   border-radius: 4px;
-  width: 60px;
-  height: 30px;
+  width: 110px;
+  height: 60px;
   cursor: pointer;
+  font-size: 16px;
   background-color: rgb(60, 137, 210);
   color: #fff;
 }
 #action button:nth-child(1) {
   border-radius: 4px 0 0 4px;
+  margin-left: 0px;
 }
 #action button:nth-child(2) {
-  left: -5px;
+  left: -0px;
   padding: 0;
   border-left: 0;
   border-radius: 0 4px 4px 0;
   width: 30px;
 }
+
+/* 展开按钮 */
 #detail #ibox {
   position: absolute;
   bottom: 12px;
@@ -180,15 +198,17 @@ h2 {
   float: right;
   margin-right: 36px;
   margin-top: 5px;
+  font-size: 16px;
   color: rgb(12, 115, 194);
   cursor: pointer;
 }
 #ibox i:hover {
   text-decoration: underline;
 }
-#detail #DetailContent {
-  position: relative;
-  left: 180px;
+
+/* 评论 */
+ol {
+  font-size: 16px;
 }
 li:nth-child(1) {
   border-bottom: 2px solid rgb(194, 12, 12);
@@ -196,11 +216,15 @@ li:nth-child(1) {
   padding: 15px;
   padding-left: 0;
 }
+li img {
+  width: 100px;
+  height: 100px;
+}
 li div {
   display: inline-block;
   position: relative;
-  top: -50px;
-  left: 67px;
+  top: -116px;
+  left: 130px;
   width: 800px;
 }
 li div:nth-child(3) {
@@ -225,21 +249,23 @@ li span {
   /* 点赞 */
   position: absolute;
   right: 0px;
-  padding-left: 30px;
+  padding-left: 45px;
   background: url(../../assets/img/song/LikedCount.png) no-repeat;
-  background-position: 7px 2px;
-  background-size: 20px 20px;
+  background-position: -0px 7px;
+  background-size: 40px 40px;
   cursor: pointer;
+  font-size: 16px;
 }
 li span:hover {
   text-decoration: underline;
 }
 li .backgroundImge {
   background: url(../../assets/img/song/LikedCount-active.png) no-repeat;
-  background-position: 7px 2px;
-  background-size: 20px 20px;
+  background-position: -0px 7px;
+  background-size: 40px 40px;
 }
 
+/* 歌曲 */
 table {
   display: block;
   position: relative;
@@ -248,7 +274,8 @@ table {
   border: 1px solid rgb(0, 0, 0, 0.1);
   border-top: 0;
   border-collapse: collapse;
-  width: 840px;
+  width: 900px;
+  font-size: 16px;
 }
 tr:nth-child(2n-1) {
   background-color: rgb(237, 237, 237);
@@ -259,11 +286,9 @@ tr:nth-child(2n-1) {
 }
 th {
   box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);
-  line-height: 42px;
+  height: 60px;
+  line-height: 60px;
   background-color: rgb(232, 232, 232);
-}
-th:nth-child(1) {
-  height: 42px;
 }
 /* 歌曲列表table的表头和时长数字 */
 table i {
@@ -290,7 +315,7 @@ td:nth-child(1) {
 th:nth-child(3),
 td:nth-child(3) {
   padding-left: 22px;
-  width: 80px;
+  width: 134px;
   text-align: center;
   box-sizing: border-box;
 }

@@ -18,17 +18,17 @@
           <i
             @click="jump({ type: 1, area: 7 }, 1, '华语男歌手')"
             :class="{ AcitveElement: active == 1 }"
-            >华语男歌手</i
+            >男歌手</i
           >
           <i
             @click="jump({ type: 2, area: 7 }, 2, '华语女歌手')"
             :class="{ AcitveElement: active == 2 }"
-            >华语女歌手</i
+            >女歌手</i
           >
           <i
             @click="jump({ type: 3, area: 7 }, 3, '华语乐队/组合')"
             :class="{ AcitveElement: active == 3 }"
-            >华语乐队/组合</i
+            >乐队/组合</i
           >
         </div>
 
@@ -38,17 +38,17 @@
           <i
             @click="jump({ type: 1, area: 96 }, 4, '欧美男歌手')"
             :class="{ AcitveElement: active == 4 }"
-            >欧美男歌手</i
+            >男歌手</i
           >
           <i
             @click="jump({ type: 2, area: 96 }, 5, '欧美女歌手')"
             :class="{ AcitveElement: active == 5 }"
-            >欧美女歌手</i
+            >女歌手</i
           >
           <i
             @click="jump({ type: 3, area: 96 }, 6, '欧美乐队/组合')"
             :class="{ AcitveElement: active == 6 }"
-            >欧美乐队/组合</i
+            >乐队/组合</i
           >
         </div>
 
@@ -58,17 +58,17 @@
           <i
             @click="jump({ type: 1, area: 8 }, 7, '日本男歌手')"
             :class="{ AcitveElement: active == 7 }"
-            >日本男歌手</i
+            >男歌手</i
           >
           <i
             @click="jump({ type: 2, area: 8 }, 8, '日本女歌手')"
             :class="{ AcitveElement: active == 8 }"
-            >日本女歌手</i
+            >女歌手</i
           >
           <i
             @click="jump({ type: 3, area: 8 }, 9, '日本乐队/组合')"
             :class="{ AcitveElement: active == 9 }"
-            >日本乐队/组合</i
+            >乐队/组合</i
           >
         </div>
 
@@ -78,17 +78,17 @@
           <i
             @click="jump({ type: 1, area: 16 }, 10, '韩国男歌手')"
             :class="{ AcitveElement: active == 10 }"
-            >韩国男歌手</i
+            >男歌手</i
           >
           <i
             @click="jump({ type: 2, area: 16 }, 11, '韩国女歌手')"
             :class="{ AcitveElement: active == 11 }"
-            >韩国女歌手</i
+            >女歌手</i
           >
           <i
             @click="jump({ type: 3, area: 16 }, 12, '韩国乐队/组合')"
             :class="{ AcitveElement: active == 12 }"
-            >韩国乐队/组合</i
+            >乐队/组合</i
           >
         </div>
 
@@ -98,17 +98,17 @@
           <i
             @click="jump({ type: 1, area: 0 }, 13, '其他男歌手')"
             :class="{ AcitveElement: active == 13 }"
-            >其他男歌手</i
+            >男歌手</i
           >
           <i
             @click="jump({ type: 2, area: 0 }, 14, '其他女歌手')"
             :class="{ AcitveElement: active == 14 }"
-            >其他女歌手</i
+            >女歌手</i
           >
           <i
             @click="jump({ type: 3, area: 0 }, 15, '其他乐队/组合')"
             :class="{ AcitveElement: active == 15 }"
-            >其他乐队/组合</i
+            >乐队/组合</i
           >
         </div>
       </div>
@@ -121,13 +121,13 @@
               path: '/artist-page',
               query: { id: item.id },
             }"
-            :class="{ 'router-link': index >= 24 }"
+            :class="{ 'router-link': index >= 20 }"
           >
-            <li v-if="index < 24">
+            <li v-if="index < 20">
               <img :src="item.picUrl + '?param=130y130'" alt="" />
               <span :title="item.name">{{ SaveName(item.name) }}</span>
             </li>
-            <p v-if="index >= 24">
+            <p v-if="index >= 20">
               <i :title="item.name">{{ SaveName(item.name) }}</i>
             </p>
           </router-link>
@@ -138,7 +138,6 @@
 </template>
 
 <script>
-
 export default {
   name: "Artist",
   data() {
@@ -211,6 +210,8 @@ export default {
 #ClassifyBox {
   position: relative;
   top: 40px;
+  font-size: 0;
+  font-size: 16px;
 }
 #content {
   position: absolute;
@@ -224,24 +225,27 @@ export default {
   width: 1280px;
   background-color: #fff;
 }
+
+/* 分类按钮 */
 #ClassBox {
+  display: inline-block;
   position: absolute;
   top: 0px;
-  left: -173px;
-  border-left: 1px solid rgb(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  left: -4px;
+  border: 1px solid rgb(0, 0, 0, 0.2);
   padding: 30px;
   box-sizing: border-box;
   height: 100%;
+  background-color: rgb(244, 244, 244);
 }
 #ClassBox div {
   margin-top: 20px;
   border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }
-#ClassBox div:nth-last-child(1){
+#ClassBox div:nth-last-child(1) {
   border: 0;
 }
-#ClassBox h3{
+#ClassBox h3 {
   position: relative;
   top: -6px;
   left: -8px;
@@ -250,21 +254,28 @@ export default {
   display: block;
   margin-bottom: 10px;
   padding: 5px;
-  width: 100px;
   font-size: 13px;
   cursor: pointer;
 }
 #ClassBox i:hover {
   text-decoration: underline;
 }
+
 /* 歌手 */
+#singers {
+  display: inline-block;
+  position: relative;
+  left: 200px;
+  padding: 50px;
+  width: 940px;
+}
 #singers div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 #singers a {
-  margin: 0 38px;
+  margin: 0 20px;
 }
 li {
   display: inline-block;
@@ -288,6 +299,8 @@ img {
   display: block;
   margin: 0 auto;
   box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.1);
+  width: 130px;
+  height: 130px;
 }
 .AcitveElement {
   border: 1px solid rgba(65, 65, 65, 0.1);
@@ -310,7 +323,7 @@ img {
   color: rgb(255, 0, 0);
 }
 #singers .router-link {
-  margin: 0 38px;
+  margin: 0 20px;
   margin-right: 157px;
   margin-top: 12px;
 }

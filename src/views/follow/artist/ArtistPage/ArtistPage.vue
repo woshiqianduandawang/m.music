@@ -99,6 +99,7 @@ export default {
 <style scoped>
 #ArtistPage {
   position: relative;
+  padding-bottom: 120px;
 }
 #ArtistBox {
   position: relative;
@@ -109,18 +110,21 @@ export default {
   padding-top: 0px;
   width: 1280px;
   box-sizing: border-box;
+  background-color: #fff;
 }
 #left{
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 30px;
-  width: 700px;
-  background-color: #fff;
+  width: 960px;
 }
 h1 {
   position: relative;
   top: 10px;
   left: 28px;
   margin: 0;
+  font-size: 6vw;
 }
 #imgbox {
   padding-top: 20px;
@@ -128,6 +132,8 @@ h1 {
 img {
   display: block;
   margin: 0 auto;
+  width: 960px;
+  height: 450px;
   text-align: center;
 }
 #RouterBox {
@@ -135,7 +141,7 @@ img {
   left: 50%;
   transform: translateX(-50%);
   border: 1.5px solid rgba(67, 67, 67, 0.3);
-  width: 640px;
+  width: 960px;
   height: 51px;
   line-height: 50px;
   box-sizing: border-box;
@@ -144,10 +150,10 @@ img {
 }
 a {
   display: inline-block;
-  width: 159px;
+  width: 200px;
   height: 47px;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25vw;
   font-weight: 700;
   box-sizing: border-box;
   background-color: rgb(242, 242, 242);

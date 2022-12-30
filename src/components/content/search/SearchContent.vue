@@ -3,7 +3,7 @@
   <div id="SearchContent">
     <followVue></followVue>
     <div v-if="searchif" id="content">
-      以下是搜索{{ this.$route.query.content }}的结果：
+      <p>以下是搜索{{ this.$route.query.content }}的结果：</p>
       <!-- 遍历搜索到的歌手 -->
       <router-link
         id="SearchSingerBox"
@@ -140,6 +140,7 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   width: 1280px;
+  font-size: 16px;
 }
 #SearchSingerBox {
   display: block;
@@ -164,71 +165,86 @@ export default {
 table {
   display: block;
   position: relative;
+  top: 50px;
+  left: 50px;
   border: 1px solid rgb(0, 0, 0, 0.1);
   border-top: 0;
   border-collapse: collapse;
-  width: 840px;
+  width: 1150px;
+  background-color: #fff;
 }
-tr:nth-child(2n-1) {
-  background-color: rgb(237, 237, 237);
+tr,
+th {
+  height: 100px;
+  line-height: 100px;
+  font-size: 16px;
+}
+tr:nth-child(2n) {
+  background-color: rgb(245, 244, 244);
 }
 #tr:hover {
-  background-color: rgb(123, 123, 123);
-  color: rgb(234, 234, 234);
+  background-color: rgb(208, 208, 208);
+}
+td:nth-child(4) {
+  padding-left: 20px;
+  width: 234px;
+}
+th:nth-child(4) {
+  width: 254px;
 }
 th {
   box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);
-  line-height: 42px;
-  background-color: rgb(232, 232, 232);
+  /* height: 42px;
+    line-height: 42px; */
 }
-th:nth-child(1) {
-  height: 42px;
-}
-/* 歌曲列表table的表头和时长数字 */
 table i {
   float: left;
+  padding-left: 20px;
 }
 th,
 td {
   display: inline-block;
+  width: 325px;
   white-space: nowrap;
-  padding-left: 20px;
   overflow: hidden;
 }
 th {
   border: 1px solid rgb(0, 0, 0, 0.1);
   border-right: 0;
+  box-sizing: border-box;
 }
-th:nth-child(1),
-td:nth-child(1) {
+th:nth-child(1) {
   border-left: 0;
-  padding: 0;
-  text-align: center;
+  padding-left: 100px;
   width: 50px;
+}
+td:nth-child(1) {
+  padding-left: 20px;
+  width: 80px;
+}
+td:nth-child(2) {
+  padding-left: 20px;
+  width: 305px;
 }
 th:nth-child(3),
 td:nth-child(3) {
-  padding-left: 22px;
-  width: 80px;
-  text-align: center;
-  box-sizing: border-box;
+  width: 141px;
 }
-th:nth-child(2),
-td:nth-child(2) {
-  width: 236px;
-}
-th:nth-child(4),
-td:nth-child(4) {
-  width: 222px;
-}
-th:nth-child(5),
 td:nth-child(5) {
-  width: 187px;
+  padding-left: 20px;
+  width: 305px;
+}
+table p {
+  padding-left: 20px;
+  width: 0;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
 }
 table span:hover,
 table p:hover {
-  color: rgb(255, 255, 255);
-  text-decoration: underline;
+  color: #fff;
 }
 table div {
   display: inline-block;
@@ -237,7 +253,7 @@ table span {
   display: inline-block;
   height: 40px;
   line-height: 40px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
 }
 td strong {

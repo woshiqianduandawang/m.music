@@ -125,7 +125,6 @@ export default {
         this.ruin = true;
       })
       .catch((arr) => {
-        alert("请求数据失败，请刷新重试！");
       });
     //获取歌单详情
     this.$Request({
@@ -142,7 +141,6 @@ export default {
         this.date = new Date(a.createTime);
       })
       .catch((arr) => {
-        alert("请求数据失败，请刷新重试！");
       });
   },
   deactivated() {

@@ -176,7 +176,6 @@ export default {
           this.ClassSingers = ClassSinger;
         })
         .catch((arr) => {
-          alert("请求数据失败，请刷新重试！");
         });
     },
     //携带数据跳转到当前页面

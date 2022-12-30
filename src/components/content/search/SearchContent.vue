@@ -108,7 +108,6 @@ export default {
         }
       )
       .catch((arr) => {
-        alert("请求数据失败，请刷新重试！");
       });
     // 搜索结果-多重匹配
     this.$Request({
@@ -124,7 +123,6 @@ export default {
         }
       })
       .catch((arr) => {
-        alert("请求数据失败，请刷新重试！");
       });
   },
   methods: {},

@@ -222,7 +222,6 @@ export default {
   width: 250px;
   height: 60px;
   background-color: #fff;
-  /* font-size: 0; */
 }
 /* 装input的盒子 */
 #inputhbox {

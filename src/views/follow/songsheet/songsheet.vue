@@ -48,7 +48,6 @@ export default {
     }).then( ({data:{playlists:a}}) => {
       this.tags = a
     }).catch(arr =>{
-      alert('请求数据失败，请刷新重试！')
     })
   },
   watch: {
@@ -64,7 +63,6 @@ export default {
         }).then( ({data:{playlists:b}}) => {
           this.tags = b;
         }).catch(arr =>{
-          alert('请求数据失败，请刷新重试！')
         })
       }
       

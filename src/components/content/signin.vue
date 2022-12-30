@@ -6,14 +6,7 @@
         登录
         <i @click="FunClose">×</i>
       </p>
-      <!-- 扫码登陆 -->
-      <div id="a1-b1" v-show="shiftif">
-        <img :src="qrimgurl" alt="" />
-        <span>使用网易云音乐app扫码登陆</span>
-        <i @click="shift">手机号登录</i>
-      </div>
-      <!-- 手机号登录 -->
-      <div id="a1-b2" v-show="!shiftif">
+      <div id="a1-b2">
         <li>
           <input type="number" ref="phone" placeholder="请输入手机号" />
         </li>
@@ -24,7 +17,6 @@
           >获取验证码</span
         >
         <button @click="submit">登录</button>
-        <i @click="shift">扫码登录</i>
       </div>
     </div>
   </div>
@@ -37,7 +29,6 @@ export default {
     return {
       qrimgurl: "",
       key: "",
-      shiftif: true,
       phone: "",
       // 匹配正确手机号码的正则表达式
       regexp: /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/,
@@ -69,10 +60,6 @@ export default {
         .catch((arr) => {
           alert("请求数据失败，请刷新重试！");
         });
-    },
-    shift() {
-      // 切换登录方式
-      this.shiftif = !this.shiftif;
     },
     // 获取验证码
     Getcaptcha() {
@@ -217,6 +204,8 @@ export default {
   position: absolute;
   top: 67px;
   left: 50%;
+  width: 200px;
+  height: 200px;
   transform: translateX(-50%);
 }
 #a1-b1 span {
@@ -255,7 +244,7 @@ export default {
   border: 1px solid rgba(154, 154, 154, 0.2);
   margin-bottom: 20px;
   border-radius: 15px;
-  height: 30px;
+  height: 60px;
 }
 #a1-b2 li input {
   margin-top: 8px;
@@ -270,10 +259,10 @@ input::-webkit-input-placeholder {
   top: -3px;
 }
 #a1-b2 li:nth-child(1) {
-  width: 217px;
+  width: 300px;
 }
 #a1-b2 li:nth-child(1) input {
-  width: 190px;
+  width: 250px;
 }
 #a1-b2 li:nth-child(2) {
   width: 133px;
@@ -281,12 +270,12 @@ input::-webkit-input-placeholder {
 #a1-b2 span {
   position: absolute;
   right: 0;
-  top: 53px;
+  top: 90px;
   border-radius: 15px;
-  width: 75px;
-  height: 30px;
+  width: 150px;
+  height: 50px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 30px;
   cursor: pointer;
   color: #fff;
@@ -313,8 +302,9 @@ input::-webkit-inner-spin-button {
   position: absolute;
   border: 0;
   border-radius: 20px;
-  width: 100%;
-  height: 30px;
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
   color: #fff;
   background-color: rgb(255, 0, 0);
   cursor: pointer;

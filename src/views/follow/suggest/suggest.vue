@@ -122,7 +122,6 @@ export default {
       }).then( ({data:{playlists:a}}) => {
         this.tags = a
       }).catch( arr =>{
-        alert('请求数据失败，请刷新重试！')
       })
       // 请求新碟数据
       this.$Request({
@@ -135,7 +134,6 @@ export default {
         this.monthData = a
         // console.log(a);
       }).catch( arr =>{
-        alert('请求数据失败，请刷新重试！')
       })
     },
     methods: {
@@ -157,9 +155,7 @@ export default {
           }
         }).then( a => {
           this.list = a
-          console.log(a);
         }).catch( arr =>{
-          alert('请求数据失败，请刷新重试！')
         })
       },
       // 新碟左滑按钮

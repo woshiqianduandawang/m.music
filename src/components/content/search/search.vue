@@ -240,13 +240,13 @@ export default {
   z-index: 5;
 }
 /* input的placeholder样式 */
-input::-webkit-input-placeholder {
+/* input::-webkit-input-placeholder {
   position: absolute;
   top: 4px;
   font-size: 15px;
   line-height: 30px;
   color: #aab2bd;
-}
+} */
 /* 搜索记录的盒子 */
 #SearchRecord {
   position: absolute;

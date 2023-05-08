@@ -280,7 +280,7 @@ h2 {
 }
 #author button {
   position: absolute;
-  top: 220px;
+  top: 110px;
   padding-left: 5px;
   padding-right: 5px;
   border-color: rgb(184, 184, 184);

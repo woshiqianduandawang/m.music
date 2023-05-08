@@ -1,6 +1,6 @@
 <template>
   <!-- 歌单页面 -->
-  <div id="playlist" v-if="ruin">
+  <div id="playlist">
     <Follow></Follow>
     <div id="content">
       <div id="a1">
@@ -116,6 +116,7 @@ export default {
     };
   },
   activated() {
+    console.log(1);
     this.$store.state.mask = true;
     // 获取歌单歌曲
     this.$Request({
@@ -262,12 +263,11 @@ h2 {
 }
 #author div:nth-child(2) {
   position: absolute;
-  top: 15px;
+  top: 0px;
   left: 120px;
   width: 900px;
 }
 #author div:nth-child(3) {
-  margin-top: 10px;
   font-size: 13px;
 }
 #author span {

@@ -279,8 +279,6 @@ h2 {
   font-size: 13px;
 }
 #author button {
-  position: absolute;
-  top: 110px;
   padding-left: 5px;
   padding-right: 5px;
   border-color: rgb(184, 184, 184);

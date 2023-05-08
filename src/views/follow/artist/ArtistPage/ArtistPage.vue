@@ -1,7 +1,7 @@
 <template>
-  <div id="ArtistPage" v-if="templateif">
+  <div id="ArtistPage">
     <followVue></followVue>
-    <div id="ArtistBox">
+    <div id="ArtistBox"  v-if="templateif">
       <div id="left">
         <h1>{{ SingerData.artist.name }}</h1>
         <div id="imgbox">
@@ -72,6 +72,7 @@ export default {
   methods: {
   },
   activated() {
+    this.$store.state.mask = true
     // 获取歌手信息
     this.$Request({
       url: "/artist/detail",

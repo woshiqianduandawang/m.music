@@ -56,6 +56,7 @@ export default {
         .then(({ data: { songs: songss } }) => {
           this.songs = songss;
           this.show = true;
+          this.$store.state.mask = false
         })
         .catch((arr) => {
         });

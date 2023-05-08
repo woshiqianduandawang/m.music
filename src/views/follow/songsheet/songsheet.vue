@@ -42,11 +42,13 @@ export default {
     }
   },
   created() {
+    this.$store.state.mask = true
     // 请求歌单数据
     this.$Request({
       url: '/top/playlist',
     }).then( ({data:{playlists:a}}) => {
       this.tags = a
+      this.$store.state.mask = false
     }).catch(arr =>{
     })
   },
@@ -62,11 +64,10 @@ export default {
           }
         }).then( ({data:{playlists:b}}) => {
           this.tags = b;
+          this.$store.state.mask = false
         }).catch(arr =>{
         })
       }
-      
-      
     }
   },
   methods: {

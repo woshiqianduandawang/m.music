@@ -132,7 +132,7 @@ export default {
         }
       }).then( ({data:{albums:a}}) => {
         this.monthData = a
-        // console.log(a);
+        this.$store.state.mask = false
       }).catch( arr =>{
       })
     },

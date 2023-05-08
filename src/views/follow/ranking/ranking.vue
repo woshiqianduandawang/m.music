@@ -79,6 +79,7 @@ export default {
     methods: {
       // 获取榜单数据
       Getdata() {
+        this.$store.state.mask = true
         // 判断是否是第一次创建组件
         this.$route.query.id ?this.active = null :''
         // 跳到页面最上端
@@ -93,6 +94,7 @@ export default {
           this.list = a
           // 设置title
           document.title = '榜单-' + this.list.name
+          this.$store.state.mask = false
         }).catch( arr =>{
         })
       },

@@ -164,6 +164,7 @@ export default {
   methods: {
     // 获取歌手数据
     GetClassSingers() {
+      this.$store.state.mask = true
       this.$Request({
         url: "/artist/list",
         params: {
@@ -174,6 +175,7 @@ export default {
       })
         .then(({ data: { artists: ClassSinger } }) => {
           this.ClassSingers = ClassSinger;
+          this.$store.state.mask = false
         })
         .catch((arr) => {
         });

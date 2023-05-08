@@ -17,7 +17,10 @@
               <div>
                 <p>{{ detail.creator.nickname }}</p>
                 <!-- 创建时间 -->
-                <span>{{ GetYear(date) }}{{ GetMonths(date) }}{{ GetDay(date) }} 创建</span>
+                <span
+                  >{{ GetYear(date) }}{{ GetMonths(date)
+                  }}{{ GetDay(date) }} 创建</span
+                >
               </div>
               <div>
                 标签：
@@ -91,7 +94,7 @@
 </template>
 
 <script>
-import mixincomputed from '@/common/mixin-computed'
+import mixincomputed from "@/common/mixin-computed";
 import Follow from "@/views/follow/follow";
 
 export default {
@@ -113,7 +116,7 @@ export default {
     };
   },
   activated() {
-    this.$store.state.mask = true
+    this.$store.state.mask = true;
     // 获取歌单歌曲
     this.$Request({
       url: "/playlist/track/all",
@@ -124,10 +127,9 @@ export default {
       .then(({ data: { songs: a } }) => {
         this.songs = a;
         this.ruin = true;
-        this.$store.state.mask = false
+        this.$store.state.mask = false;
       })
-      .catch((arr) => {
-      });
+      .catch((arr) => {});
     //获取歌单详情
     this.$Request({
       url: "/playlist/detail",
@@ -142,8 +144,7 @@ export default {
         this.authorif = true;
         this.date = new Date(a.createTime);
       })
-      .catch((arr) => {
-      });
+      .catch((arr) => {});
   },
   deactivated() {
     this.open = false;
@@ -195,45 +196,52 @@ export default {
   background-color: #fff;
 }
 #a1 {
-  padding: 56px;
-  padding-top: 30px;
+  /* padding: 56px;
+  padding-top: 30px; */
   border: 2px solid rgba(79, 79, 79, 0.1);
-  width: 840px;
+  width: 100%;
 }
 #detail {
   position: relative;
-  padding: 40px;
+  padding: 120px;
+  padding-top: 70px;
   padding-bottom: 120px;
   border-bottom: 0;
-  width: 840px;
+  width: 1000px;
   box-sizing: border-box;
+}
+h2 {
+  font-size: 20px;
 }
 #detail #photo {
   position: absolute;
-  top: 40px;
-  left: 0px;
+  top: 80px;
+  left: 80px;
   width: 180px;
   height: 180px;
 }
 #detail #intro {
   position: relative;
-  top: 80px;
+  top: 100px;
   left: 180px;
-  width: 550px;
-  height: 125px;
-  line-height: 25px;
+  width: 600px;
+  height: 500px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 50px;
   overflow: hidden;
 }
 #detail #ibox {
   position: absolute;
-  bottom: 12px;
-  right: 30px;
+  bottom: 0px;
+  right: 0px;
   width: 100%;
 }
 #ibox a {
   float: right;
-  margin-right: 36px;
-  margin-top: 5px;
+  margin-right: -50px;
+  margin-top: 10px;
+  font-size: 20px;
   color: rgb(12, 115, 194);
   cursor: pointer;
 }
@@ -246,18 +254,17 @@ export default {
 }
 #detail #DetailContent img {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
 }
 #author {
   position: relative;
-  top: 40px;
 }
 #author div:nth-child(2) {
   position: absolute;
   top: 15px;
-  left: 60px;
-  width: 370px;
+  left: 120px;
+  width: 900px;
 }
 #author div:nth-child(3) {
   margin-top: 10px;
@@ -269,19 +276,21 @@ export default {
 }
 #author p {
   display: inline-block;
+  font-size: 13px;
 }
 #author button {
   position: absolute;
-  top: 83px;
+  top: 220px;
   padding-left: 5px;
   padding-right: 5px;
   border-color: rgb(184, 184, 184);
   border-radius: 4px;
   margin-top: 5px;
-  width: 60px;
-  height: 30px;
+  width: 120px;
+  height: 60px;
   cursor: pointer;
   background-color: rgb(60, 137, 210);
+  font-size: 16px;
   color: #fff;
 }
 /* 歌曲 */
@@ -291,22 +300,24 @@ table {
   border: 1px solid rgb(0, 0, 0, 0.1);
   border-top: 0;
   border-collapse: collapse;
-  width: 840px;
+  width: 100%;
+}
+tr {
+  display: block;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  padding-left: 50px;
+}
+tr:nth-child(1) {
+  padding-left: 115px;
 }
 tr:nth-child(2n-1) {
   background-color: rgb(237, 237, 237);
 }
-#tr:hover {
-  background-color: rgb(123, 123, 123);
-  color: rgb(234, 234, 234);
-}
 th {
-  box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);
-  line-height: 42px;
-  background-color: rgb(232, 232, 232);
-}
-th:nth-child(1) {
-  height: 42px;
+  line-height: 80px;
+  height: 90px;
 }
 /* 歌曲列表table的表头和时长数字 */
 table i {
@@ -317,13 +328,12 @@ td {
   display: inline-block;
   white-space: nowrap;
   padding-left: 20px;
+  font-size: 16px;
   overflow: hidden;
 }
-th {
-  border: 1px solid rgb(0, 0, 0, 0.1);
-  border-right: 0;
+th:nth-child(1) {
+  display: none;
 }
-th:nth-child(1),
 td:nth-child(1) {
   border-left: 0;
   padding: 0;
@@ -332,22 +342,21 @@ td:nth-child(1) {
 }
 th:nth-child(3),
 td:nth-child(3) {
-  padding-left: 22px;
-  width: 80px;
+  width: 140px;
   text-align: center;
   box-sizing: border-box;
 }
 th:nth-child(2),
 td:nth-child(2) {
-  width: 236px;
+  width: 400px;
 }
 th:nth-child(4),
 td:nth-child(4) {
-  width: 222px;
+  width: 250px;
 }
 th:nth-child(5),
 td:nth-child(5) {
-  width: 187px;
+  width: 200px;
 }
 table span:hover,
 table p:hover {
@@ -359,8 +368,6 @@ table div {
 }
 table span {
   display: inline-block;
-  height: 40px;
-  line-height: 40px;
   font-size: 16px;
   cursor: pointer;
 }

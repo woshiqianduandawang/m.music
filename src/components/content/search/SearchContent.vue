@@ -104,6 +104,7 @@ export default {
         }) => {
           this.songs = a;
           this.searchif = true;
+          this.$store.state.mask = false
           // console.log(a);
         }
       )

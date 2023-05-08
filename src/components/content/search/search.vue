@@ -226,7 +226,7 @@ export default {
 /* 装input的盒子 */
 #inputhbox {
   width: 120px;
-  height: 20px;
+  height: 60px;
 }
 #inputhbox input {
   position: absolute;

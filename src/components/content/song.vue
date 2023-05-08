@@ -35,7 +35,7 @@
 
       <!-- 简介 -->
       <p slot="intro" v-html="lyric"></p>
-      
+
       <!-- 评论区 -->
       <li
         slot="comments"
@@ -105,8 +105,7 @@ export default {
             this.lyric = newlyric.join("<br/>");
           }
         )
-        .catch((arr) => {
-        });
+        .catch((arr) => {});
 
       // 获取歌曲信息
       this.$Request({
@@ -133,6 +132,7 @@ export default {
         },
       }).then(({ data: { data: a } }) => {
         this.comments = a;
+        this.$store.state.mask = false
       });
     },
 
@@ -165,11 +165,11 @@ export default {
 </script>
 
 <style scoped>
-  a span {
-    color: rgb(12 115 194);
-    font-size: 13px;
-  }
-  a span:hover{
-    text-decoration: underline;
-  }
+a span {
+  color: rgb(12 115 194);
+  font-size: 13px;
+}
+a span:hover {
+  text-decoration: underline;
+}
 </style>

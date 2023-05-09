@@ -26,8 +26,6 @@
 <script>
 export default {
   name: "Follow",
-  components: {},
-  methods: {},
   created() {
     // this.$Request({
     //   url: '/playlist/track/all',

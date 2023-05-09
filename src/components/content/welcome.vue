@@ -3,7 +3,7 @@
   <div ref="welcome" id="welcome" v-if="show">
     <div>
       <span>Welcome</span>
-      <p>欢迎婷婷公主，李老板，杜老板以及龙姐莅临！</p>
+      <p>欢迎婷婷公主，李老板，小杜以及龙姐莅临！</p>
       <button @click="close">关闭</button>
     </div>
   </div>

@@ -20,12 +20,13 @@ export default {
   },
   methods: {
     close() {
-      if (this.count == 0) {
-        this.show = false;
-      } else {
-        alert(`关闭失败嘻嘻嘻，再点${this.count}次试试`);
-        this.count--;
-      }
+      // if (this.count == 0) {
+      //   this.show = false;
+      // } else {
+      //   alert(`关闭失败嘻嘻嘻，再点${this.count}次试试`);
+      //   this.count--;
+      // }
+      this.show = false;
     },
   },
   mounted() {
